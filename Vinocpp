@@ -1,0 +1,59 @@
+NAME : VINOTHINI M
+COLLEGE NAME : ERODE SENGUNTHAR ENGINEERING COLLEGE
+
+#include <iostream>
+#include <string>
+
+class Weather {
+private:
+    std::string city;
+    char temperature;
+    char humidity;
+    char windSpeed;
+    char cloudy;
+    char rainy;
+
+public:
+    Weather(std::string city, char temperature, char humidity, char windSpeed, char cloudy, char rainy);
+    void displayWeather();
+};
+
+Weather::Weather(std::string city, char temperature, char humidity, char windSpeed, char cloudy, char rainy)
+    : city(city), temperature(temperature), humidity(humidity), windSpeed(windSpeed), cloudy(cloudy), rainy(rainy) {}
+
+void Weather::displayWeather() {
+    std::cout << "City: " << city << std::endl;
+    std::cout << "Temperature: " << temperature << " degrees Celsius" << std::endl;
+    std::cout << "Humidity: " << humidity << "%" << std::endl;
+    std::cout << "Wind Speed: " << windSpeed << " km/h" << std::endl;
+    std::cout << "Cloudy: " << cloudy << "%" << std::endl;
+    std::cout << "Rainy: " << rainy << "%" << std::endl;
+}
+
+int main() {
+    std::string city;
+    char temperature, humidity, windSpeed, cloudy, rainy;
+
+    std::cout << "Enter city: ";
+    std::cin >> city;
+
+    std::cout << "Enter temperature (in degrees Celsius): ";
+    std::cin >> temperature;
+
+    std::cout << "Enter humidity (in percentage): ";
+    std::cin >> humidity;
+
+    std::cout << "Enter wind speed (in km/h): ";
+    std::cin >> windSpeed;
+    
+    std::cout << "Enter cloudy (in Celsius): ";
+    std::cin >> cloudy;
+    
+    std::cout << "Enter rainy (in Celsius): ";
+    std::cin >> rainy;
+
+    Weather weather(city, temperature, humidity, windSpeed, cloudy, rainy);
+    weather.displayWeather();
+
+    return 0;
+}
